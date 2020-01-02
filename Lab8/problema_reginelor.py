@@ -1,7 +1,7 @@
 import copy
 from helpers import pretty_print
 
-N = 12
+N = 8
 tabla = [[0 for col in range(N)] for row in range(N)]
 solutions = []
 
@@ -40,6 +40,6 @@ def solve_queen_problem(column=0):
 
 if __name__ == '__main__':
     solve_queen_problem()
-    # for sol in solutions:
-    #     pretty_print(sol)
+    for sol in solutions:
+        pretty_print(sol)
     print(f'in total sunt {len(solutions)} solutii')
