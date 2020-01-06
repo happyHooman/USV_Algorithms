@@ -16,12 +16,8 @@ for i in range(30):
         np.random.shuffle(cr)
     collection.append(cr)
 
-pre = np.zeros((30, 1), int)
-collection = np.hstack((pre, collection))
-
-pretty_print(collection)
+collection = np.hstack((np.zeros((30, 1), int), collection))
 ds = []
-
 for cr in collection:
     d = 0
     for i in range(9):
