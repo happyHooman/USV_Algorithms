@@ -7,3 +7,8 @@ def pretty_print(matrix):
     for row in matrix:
         print(''.join(' ' * (1 + max_l - len(str(e))) + str(e) for e in row))
     print()
+
+
+def get_matrix_from_file(filename):
+    with open(filename) as f:
+        return [[int(y) for y in x.split()] for x in f.read().splitlines()]
