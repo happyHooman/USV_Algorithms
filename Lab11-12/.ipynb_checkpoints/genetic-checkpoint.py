@@ -1,7 +1,7 @@
 import numpy as np
 from copy import deepcopy
 
-from helpers import pretty_print, get_matrix_from_file
+from helpers import pretty_print, read_matrix_from_file
 
 
 def generate_cromosoms(size):
@@ -74,7 +74,7 @@ def recombinare(rec):
 nr_cromozomi = 30
 generatii = 400
 
-distante = get_matrix_from_file('distances.in')
+distante = read_matrix_from_file('distances.in')
 
 collection = generate_cromosoms(nr_cromozomi)
 collection = [np.hstack((0, x)) for x in collection]

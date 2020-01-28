@@ -1,7 +1,5 @@
 import numpy as np
-from copy import deepcopy
-
-from helpers import pretty_print, get_matrix_from_file
+from helpers import pretty_print, read_matrix_from_file
 
 
 def genereaza_cromozomi_aleatorii(size):
@@ -40,7 +38,7 @@ def schimbare_pozitii(li, p1, p2):
 
 def mutatie(cri):
     # creez o copie separata pentru lista de cromozomi pe care ii vom muta, altfel am fi modificat lista initiala
-    cri = deepcopy(cri)
+    cri = np.copy(cri)
     # reordonez cromozomii in mod aleatoriu, ei erau sortati dupa cea mai scurta distanta
     np.random.shuffle(cri)
     # aleg primii 5 cromozomi
@@ -61,7 +59,7 @@ def mutatie(cri):
 
 def incrucisare(rec):
     # creez o copie de lucru a listei de crumozomi
-    rec = deepcopy(rec)
+    rec = np.copy(rec)
     # reordonez cromozomii in mod aleatoriu, pentru ca asa era conditia
     np.random.shuffle(rec)
     print('-- Recombinare')
@@ -100,7 +98,7 @@ def incrucisare(rec):
 # Variablile Globale
 # functia get_matrix_from file citeste un fisier si returneaza rezultatul sub forma de matrice bidimensionala
 # declaratia functiei este in helpers/__init__.py, acolo pastrez functiile pe care le folosesc la mai multe laboratoare
-distante = get_matrix_from_file('distances.in')
+distante = read_matrix_from_file('distances.in')
 
 if __name__ == '__main__':
     nr_cromozomi = 30

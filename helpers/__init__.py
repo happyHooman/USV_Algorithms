@@ -9,6 +9,6 @@ def pretty_print(matrix):
     print()
 
 
-def get_matrix_from_file(filename):
+def read_matrix_from_file(filename):
     with open(filename) as f:
         return [[int(y) for y in x.split()] for x in f.read().splitlines()]
